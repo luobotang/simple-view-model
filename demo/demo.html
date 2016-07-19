@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DEMO - simple-view-model</title>
+</head>
+<body>
+	<form action="#">
+		<div>
+			Name: <input type="text" name="name" data-bind="name">
+		</div>
+		<div>
+			Email: <input type="text" data-bind="email">
+		</div>
+	</form>
+	<div>
+		<p>Name: <span data-bind="name"></span></p>
+		<p>Email: <span data-bind="email"></span></p>
+	</div>
+	<script src="../src/view-model.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var vm = new ViewModel({name: 'luobo'}, document.body)
+			vm.on('change', function (model) {
+				console.log('model cghanged to: ' + JSON.stringify(model))
+			})
+		})
+	</script>
+</body>
+</html>
