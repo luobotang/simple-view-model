@@ -5,22 +5,20 @@
 	<title>DEMO - simple-view-model</title>
 </head>
 <body>
-	<form action="#">
-		<div>
-			Name: <input type="text" name="name" data-bind="name">
+	<div id="card-box">
+		<div id="card-edit">
+			<p>Name: <input type="text" data-bind="name"></p>
+			<p>Email: <input type="text" data-bind="email"></p>
 		</div>
-		<div>
-			Email: <input type="text" data-bind="email">
+		<div id="card-info">
+			<p>Name: <span data-bind="name"></span></p>
+			<p>Email: <span data-bind="email"></span></p>
 		</div>
-	</form>
-	<div>
-		<p>Name: <span data-bind="name"></span></p>
-		<p>Email: <span data-bind="email"></span></p>
 	</div>
 	<script src="../src/view-model.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
-			var vm = new ViewModel({name: 'luobo'}, document.body)
+			var vm = new ViewModel({name: 'luobo'}, document.querySelector('#card-box'))
 			vm.on('change', function (model) {
 				console.log('model cghanged to: ' + JSON.stringify(model))
 			})
