@@ -4,7 +4,7 @@ A simple view model.
 
 ## demo
 
-See ```demo/demo.html```.
+See [demo.html](demo/demo.html).
 
 ## usage
 
